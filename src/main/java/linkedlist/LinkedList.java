@@ -6,33 +6,50 @@ public class LinkedList {
 
         SingleNode head = getSinglyLinkedList();
 
-        traverseLinkedList(head);
-        deleteNodeAtIndex(head,0);
-        System.out.println();
-        traverseLinkedList(head);
+        System.out.println(isValuePresent(head,300));
+
+       // traverseLinkedList(head);
+      //  deleteNodeAtIndex(head,0);
+       // System.out.println();
+       // traverseLinkedList(head);
     }
 
     private static void traverseLinkedList(SingleNode head) {
         if (head != null) {
-            SingleNode current = head;
-            while (current != null) {
-                System.out.print(current.getData() + " ");
-                current = current.getNext();
+            SingleNode iterator = head;
+            while (iterator != null) {
+                System.out.print(iterator.Data() + " ");
+                iterator = iterator.Next();
             }
         } else {
             System.out.println("Linked list is empty.");
         }
     }
 
-    private static void deleteNodeAtIndex(SingleNode head, int index) {
+
+
+
+    /* search element recursively in linked list */
+    /* GFG/SLL/8 */
+    private static boolean isValuePresent(SingleNode head, Integer value) {
+        if (head == null)
+            return false;
+        if (head.Data().equals(value))
+            return true;
+        else
+            return isValuePresent(head.Next(),value);
+    }
+
+    private static void deleteNodeWithValue(SingleNode head, int value) throws Exception {
         if (head != null) {
-            SingleNode iter = head;
-            for (int i=0; i < index-1 ; i++) {
-                iter = iter.getNext();
+            SingleNode iterator = head;
+            while (iterator != null) {
+                if (iterator.Data() == value)
+                    break;
+                iterator = iterator.Next();
             }
-            SingleNode beforeDelNode = iter;
-            SingleNode delNode = iter.getNext();
-            beforeDelNode.setNext(delNode.getNext());
+        } else {
+            throw new Exception("Head is Null");
         }
     }
 

@@ -14,11 +14,11 @@ class SingleNode {
         this.next = next;
     }
 
-    SingleNode getNext() {
+    SingleNode Next() {
         return next;
     }
 
-    Integer getData() {
+    Integer Data() {
         return data;
     }
 

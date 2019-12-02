@@ -37,20 +37,47 @@ public class LinkedList {
     }
 
     private static SingleNode getSinglyLinkedList() {
-        SingleNode head = new SingleNode(21);
-        SingleNode second = new SingleNode(22);
-        SingleNode third = new SingleNode(23);
-        SingleNode fourth = new SingleNode(24);
-        SingleNode fifth = new SingleNode(25);
-        SingleNode sixth = new SingleNode(26);
-        SingleNode seventh = new SingleNode(27);
 
-        head.setNext(second);
-        second.setNext(third);
-        third.setNext(fourth);
-        fourth.setNext(fifth);
-        fifth.setNext(sixth);
-        sixth.setNext(seventh);
+        SingleNode head = new SingleNode(21);
+        SingleNode a = new SingleNode(22);
+        SingleNode b = new SingleNode(23);
+        SingleNode c = new SingleNode(24);
+        SingleNode d = new SingleNode(25);
+        SingleNode e = new SingleNode(26);
+        SingleNode f = new SingleNode(27);
+        SingleNode g = new SingleNode(28);
+        SingleNode h = new SingleNode(29);
+        SingleNode i = new SingleNode(30);
+        SingleNode j = new SingleNode(31);
+        SingleNode k = new SingleNode(32);
+        SingleNode l = new SingleNode(33);
+        SingleNode m = new SingleNode(34);
+        SingleNode n = new SingleNode(35);
+        SingleNode o = new SingleNode(36);
+        SingleNode p = new SingleNode(37);
+        SingleNode q = new SingleNode(38);
+        SingleNode r = new SingleNode(39);
+        SingleNode s = new SingleNode(40);
+
+        head.setNext(a);
+        a.setNext(b);
+        b.setNext(c);
+        c.setNext(d);
+        d.setNext(e);
+        e.setNext(f);
+        f.setNext(g);
+        g.setNext(h);
+        h.setNext(i);
+        i.setNext(j);
+        j.setNext(k);
+        k.setNext(l);
+        l.setNext(m);
+        m.setNext(n);
+        n.setNext(o);
+        o.setNext(p);
+        p.setNext(q);
+        q.setNext(r);
+        r.setNext(s);
 
         return head;
     }

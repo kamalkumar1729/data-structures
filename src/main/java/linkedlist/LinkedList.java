@@ -6,9 +6,14 @@ public class LinkedList {
 
         SingleNode head = getSinglyLinkedList();
 
-        System.out.println(isValuePresent(head,300));
+        // System.out.println(isValuePresent(head,300));
 
-       // traverseLinkedList(head);
+        traverseLinkedList(head);
+        System.out.println();
+        head = deleteNodeWithKey(head,21);
+        traverseLinkedList(head);
+        System.out.println();
+        System.out.println(getLengthOfLinkedList(head));
       //  deleteNodeAtIndex(head,0);
        // System.out.println();
        // traverseLinkedList(head);
@@ -18,7 +23,7 @@ public class LinkedList {
         if (head != null) {
             SingleNode iterator = head;
             while (iterator != null) {
-                System.out.print(iterator.Data() + " ");
+                System.out.print(iterator.Data() + "-");
                 iterator = iterator.Next();
             }
         } else {
@@ -27,6 +32,11 @@ public class LinkedList {
     }
 
 
+    /* Point head = NULL ,linked list is deleted.*/
+    private static SingleNode deleteLinkedList(SingleNode head) {
+        head.setNext(null);
+        return head;
+    }
 
 
     /* search element recursively in linked list */
@@ -40,18 +50,57 @@ public class LinkedList {
             return isValuePresent(head.Next(),value);
     }
 
-    private static void deleteNodeWithValue(SingleNode head, int value) throws Exception {
+
+    /* delete a given key */
+        private static SingleNode deleteNodeWithKey(SingleNode head, int value) {
+            if (head != null) {
+                SingleNode iterator = head;
+                SingleNode prev = head;
+                /* we need a previous node to delete node */
+                while (iterator != null) {
+                    if (iterator.Data() == value)
+                        break;
+                    prev = iterator;
+                    iterator = iterator.Next();
+                }
+
+                /* if head is the node with key */
+                if (iterator == head && prev == head) {
+                    head = head.Next();
+                    return head;
+                }
+
+                /* Key not found */
+                if (iterator == null)
+                    return head;
+
+                /* set prev node to next*/
+                prev.setNext(iterator.Next());
+
+                return head;
+            } else {
+                return head;
+            }
+        }
+
+
+
+    private static Integer getLengthOfLinkedList(SingleNode head) {
+        int len = 0;
         if (head != null) {
             SingleNode iterator = head;
             while (iterator != null) {
-                if (iterator.Data() == value)
-                    break;
-                iterator = iterator.Next();
+                len++; iterator = iterator.Next();
             }
-        } else {
-            throw new Exception("Head is Null");
         }
+        return len;
     }
+
+
+
+
+
+
 
     private static SingleNode getSinglyLinkedList() {
 

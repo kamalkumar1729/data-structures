@@ -10,10 +10,13 @@ public class LinkedList {
 
         traverseLinkedList(head);
         System.out.println();
-        head = deleteNodeWithKey(head,21);
-        traverseLinkedList(head);
-        System.out.println();
-        System.out.println(getLengthOfLinkedList(head));
+        // head = deleteNodeWithKey(head,21);
+        // traverseLinkedList(head);
+        // System.out.println();
+        // System.out.println(getLengthOfLinkedList(head));
+
+        //System.out.println(nthNodeFromEnd(head,5).Data());
+        System.out.println(middleOfLinkedList(head.Next()).Data());
       //  deleteNodeAtIndex(head,0);
        // System.out.println();
        // traverseLinkedList(head);
@@ -37,7 +40,6 @@ public class LinkedList {
         head.setNext(null);
         return head;
     }
-
 
     /* search element recursively in linked list */
     /* GFG/SLL/8 */
@@ -86,15 +88,42 @@ public class LinkedList {
 
 
     private static Integer getLengthOfLinkedList(SingleNode head) {
-        int len = 0;
+        int length = 0;
         if (head != null) {
             SingleNode iterator = head;
             while (iterator != null) {
-                len++; iterator = iterator.Next();
+                length++; iterator = iterator.Next();
             }
         }
-        return len;
+        return length;
     }
+
+
+    /* if elements are even print Right One*/
+    private static SingleNode middleOfLinkedList(SingleNode head) {
+        SingleNode oneStep = head, twoStep = head;
+        /* move one pointer 1 step another 2 steps */
+        while (twoStep != null && twoStep.Next() != null) {
+            oneStep = oneStep.Next();
+            twoStep = twoStep.Next().Next();
+        }
+        return oneStep;
+    }
+
+    private static SingleNode nthNodeFromEnd(SingleNode head, int N) {
+            if (head != null) {
+                SingleNode iter = head;
+                int len = getLengthOfLinkedList(head);
+                /*now find len-N+1 from the beginning */
+                int fromStart = len-N+1;
+                for (int i = 1; i < fromStart; i++) iter = iter.Next();
+                return iter;
+            }
+            return head;
+    }
+
+
+
 
 
 

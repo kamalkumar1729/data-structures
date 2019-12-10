@@ -1,5 +1,8 @@
 package linkedlist;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class LinkedList {
 
     public static void main(String[] args) {
@@ -8,7 +11,7 @@ public class LinkedList {
 
         // System.out.println(isValuePresent(head,300));
 
-        traverseLinkedList(head);
+       // traverseLinkedList(head);
         System.out.println();
         // head = deleteNodeWithKey(head,21);
         // traverseLinkedList(head);
@@ -16,8 +19,14 @@ public class LinkedList {
         // System.out.println(getLengthOfLinkedList(head));
 
         //System.out.println(nthNodeFromEnd(head,5).Data());
-        System.out.println(middleOfLinkedList(head.Next()).Data());
-      //  deleteNodeAtIndex(head,0);
+       // SingleNode reverse = reverseLinkedList(head);
+        //traverseLinkedList(reverse);
+        // System.out.println(middleOfLinkedList(head.Next()).Data());
+
+        System.out.println(loopExist_Hash(head));
+        System.out.println(loopExist_FastSlowPointer(head));
+
+        //  deleteNodeAtIndex(head,0);
        // System.out.println();
        // traverseLinkedList(head);
     }
@@ -123,7 +132,48 @@ public class LinkedList {
     }
 
 
+    // FIXME : Not working; correct this;
+    private static SingleNode reverseLinkedList(SingleNode head) {
+        if (head != null) {
+            SingleNode prev = head,temp=head, iter = head;
+            while (iter != null) {
+                temp.setNext(prev);
+                prev = iter;
+                System.out.println(prev.Data() + "--");
+                iter = iter.Next();
+            }
+            return prev;
+        } else return head;
+    }
 
+
+
+    private static boolean loopExist_Hash(SingleNode head) {
+        Set<SingleNode> traversedNodes = new HashSet<SingleNode>();
+        SingleNode iter = head;
+        while (iter != null) {
+            if (traversedNodes.contains(iter)) {
+                System.out.println("loop at "+ iter.Data());
+                break;
+            } else {
+                traversedNodes.add(iter);
+                iter = iter.Next();
+            }
+        }
+        return iter != null;
+    }
+
+
+    private static boolean loopExist_FastSlowPointer(SingleNode head) {
+        SingleNode slow = head,fast = head;
+        while (slow != null && fast != null && fast.Next() != null) {
+            slow = slow.Next();
+            fast = fast.Next().Next();
+            if (fast == slow) break;
+        }
+        if (fast ==null && slow == null) return false;
+        else return true;
+    }
 
 
 
@@ -172,7 +222,8 @@ public class LinkedList {
         o.setNext(p);
         p.setNext(q);
         q.setNext(r);
-        r.setNext(s);
+        r.setNext(i); // loop in Linked list
+        //r.setNext(s);
 
         return head;
     }

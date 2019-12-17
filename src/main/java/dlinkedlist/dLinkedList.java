@@ -7,16 +7,11 @@ public class dLinkedList {
     }
 
 
-
-
-
-
-
     private static void traverseDoubleLinkedList(DoubleNode head) {
-        if (head != null){
+        if (head != null) {
             DoubleNode iter = head;
             while (iter != null) {
-                System.out.print(iter.Data()+"-");
+                System.out.print(iter.Data() + "-");
                 iter = iter.Next();
             }
         } else {
@@ -25,22 +20,22 @@ public class dLinkedList {
     }
 
     private static DoubleNode getDoubleLinkedList() {
-        DoubleNode a = new DoubleNode(10);
-        DoubleNode b = new DoubleNode(20);
-        DoubleNode c = new DoubleNode(30);
-        DoubleNode d = new DoubleNode(40);
-        DoubleNode e = new DoubleNode(50);
-        DoubleNode f = new DoubleNode(60);
-        DoubleNode g = new DoubleNode(70);
-        DoubleNode h = new DoubleNode(80);
-        DoubleNode i = new DoubleNode(90);
-        DoubleNode j = new DoubleNode(100);
-        DoubleNode k = new DoubleNode(110);
-        DoubleNode l = new DoubleNode(120);
-        DoubleNode m = new DoubleNode(130);
-        DoubleNode n = new DoubleNode(140);
-        DoubleNode o = new DoubleNode(150);
-        DoubleNode p = new DoubleNode(160);
+        DoubleNode a = new DoubleNode(1);
+        DoubleNode b = new DoubleNode(2);
+        DoubleNode c = new DoubleNode(3);
+        DoubleNode d = new DoubleNode(4);
+        DoubleNode e = new DoubleNode(5);
+        DoubleNode f = new DoubleNode(6);
+        DoubleNode g = new DoubleNode(7);
+        DoubleNode h = new DoubleNode(8);
+        DoubleNode i = new DoubleNode(9);
+        DoubleNode j = new DoubleNode(10);
+        DoubleNode k = new DoubleNode(11);
+        DoubleNode l = new DoubleNode(12);
+        DoubleNode m = new DoubleNode(13);
+        DoubleNode n = new DoubleNode(14);
+        DoubleNode o = new DoubleNode(15);
+        DoubleNode p = new DoubleNode(16);
 
 
         a.setNext(b);

@@ -23,8 +23,11 @@ public class LinkedList {
         //traverseLinkedList(reverse);
         // System.out.println(middleOfLinkedList(head.Next()).Data());
 
-        System.out.println(loopExist_Hash(head));
-        System.out.println(loopExist_FastSlowPointer(head));
+      //  System.out.println(loopExist_Hash(head));
+       // System.out.println(loopExist_FastSlowPointer(head));
+
+        head = reverseRecursive(head);
+        traverseLinkedList(head);
 
         //  deleteNodeAtIndex(head,0);
        // System.out.println();
@@ -147,6 +150,14 @@ public class LinkedList {
     }
 
 
+    private static SingleNode reverseRecursive(SingleNode head) {
+        if (head.Next() == null) return head;
+        else {
+            SingleNode node = reverseRecursive(head.Next());
+            node.setNext(head);
+            return node;
+        }
+    }
 
     private static boolean loopExist_Hash(SingleNode head) {
         Set<SingleNode> traversedNodes = new HashSet<SingleNode>();

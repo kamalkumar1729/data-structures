@@ -20,14 +20,14 @@ public class LinkedList {
 
         //System.out.println(nthNodeFromEnd(head,5).Data());
        // SingleNode reverse = reverseLinkedList(head);
-        //traverseLinkedList(reverse);
+       // traverseLinkedList(reverse);
         // System.out.println(middleOfLinkedList(head.Next()).Data());
 
       //  System.out.println(loopExist_Hash(head));
        // System.out.println(loopExist_FastSlowPointer(head));
 
-        head = reverseRecursive(head);
-        traverseLinkedList(head);
+       // head = reverseRecursive(head);
+       // traverseLinkedList(head);
 
         //  deleteNodeAtIndex(head,0);
        // System.out.println();
@@ -134,24 +134,25 @@ public class LinkedList {
             return head;
     }
 
-
-    // FIXME : Not working; correct this;
+    // FIXME : No time for this shit;
+    //  Do it later;
+    //  Maybe Never;
     private static SingleNode reverseLinkedList(SingleNode head) {
         if (head != null) {
-            SingleNode prev = head,temp=head, iter = head;
+            SingleNode iter = head,temp,prev=null;
             while (iter != null) {
-                temp.setNext(prev);
+                temp = iter.Next();
+                iter.setNext(prev);
                 prev = iter;
-                System.out.println(prev.Data() + "--");
-                iter = iter.Next();
+                iter = temp;
             }
-            return prev;
-        } else return head;
+            return null;
+        } else return null;
     }
 
 
     private static SingleNode reverseRecursive(SingleNode head) {
-        if (head.Next() == null) return head;
+        if (head == null || head.Next() == null) return head;
         else {
             SingleNode node = reverseRecursive(head.Next());
             node.setNext(head);

@@ -1,6 +1,6 @@
 package dlinkedlist;
 
-class DoubleNode {
+public class DoubleNode {
     private Integer data;
     private DoubleNode next;
     private DoubleNode prev;

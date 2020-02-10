@@ -1,6 +1,6 @@
 package tree;
 
-public class TreeNode {
+class TreeNode {
 
     private Integer data;
     private TreeNode left;
@@ -12,23 +12,23 @@ public class TreeNode {
         right = null;
     }
 
-    public void setLeft(TreeNode left) {
+    void setLeft(TreeNode left) {
         this.left = left;
     }
 
-    public void setRight(TreeNode right) {
+    void setRight(TreeNode right) {
         this.right = right;
     }
 
-    public Integer Data() {
+    Integer Data() {
         return data;
     }
 
-    public TreeNode Left() {
+    TreeNode Left() {
         return left;
     }
 
-    public TreeNode Right() {
+    TreeNode Right() {
         return right;
     }
 

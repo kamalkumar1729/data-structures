@@ -1,6 +1,6 @@
 package arrays;
 
-import java.util.HashSet;
+import java.util.Arrays;
 
 public class ArraysExamples {
     public static void main(String[] args) {
@@ -8,36 +8,55 @@ public class ArraysExamples {
         /* The [] is part of the TYPE, not of the variable NAME.*/
         /*  type[] arr ; */
 
+        // todo
+        //  Once the length of the array is defined,
+        //  it cannot be changed in the program.
+        //  arr.length
+
         String[] arr = new String[10];
-        int[] arr3 = new int[]{10222, 200, 32220, 4222, 500, 60, 798, 80, 19, 0};
+        int[] arr3 = new int[] {10222, 200, 32220, 4222, 500, 60, 798, 80, 19, 0};
+        char[] chars = new char[] {'1', 'z', '8', '0', '4', 'a', 'b'};
+        Character chr = 'c';
+        char[] letters = new char[10];
+        String name = "Kamal";
 
-       /* System.out.println('m'-'0');*/
 
-        //System.out.println(Integer.toString(1234567).charAt(5));
+        System.out.println(letters.length);
 
-        char[] chars = new char[] {'1','2','3','4','5','6','7'};
 
-        System.out.println(chars);
+        /* charArray <=> String */
+        char[] chars1 = "Formic Acid".toCharArray();
+        String string = new String(chars1);
+
+        /* char <=> String */
+        char ch = "a".charAt(0);
+        String str = Character.toString(ch);
+
+
+
+
+
+        System.out.println("           ".toCharArray().length);
+        System.out.println("           ".length());
+
+
+       // System.out.println("kamal".toCharArray().length);
+        // System.out.println(string);
+        //printChars(chars);
+        //printArray(chars);
     }
 
-    public static int colorful(int a) {
-        String A = Integer.toString(a);
-        HashSet<Integer> set = new HashSet<Integer>();
-        int prod = 0;
-        for(int i = 0; i < A.length(); i++) {
-            prod = 1;
-            for(int j = i; j < A.length(); j++ ) {
-                System.out.print(" char=" + A.charAt(j) + " ");
-                prod *= A.charAt(j) - '0';
-
-                if (set.contains(prod)) {
-                    return 0;
-                } else {
-                    set.add(prod);
-                    System.out.print(" prod =>" + prod + " ");
-                }
-            }
-        }
-        return 1;
+    private static void printChars(char[] arr) {
+        char[] myArr = arr.clone();
+        Arrays.sort(myArr);
+        System.out.println(myArr);
     }
+
+    private static void printArray(char[] arr) {
+        final String s = Arrays.toString(arr);
+        System.out.println(s.contains(""));
+        String s1 = "kamal";
+    }
+
+
 }

@@ -1,14 +1,30 @@
 package strings.anagrams;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class AnagramsFromStringSet {
+
     public static void main(String[] args) {
-        List<String> wordList = Arrays.asList("cat","tac","kamal","kalam","hejetro","jheerot");
+        List<String> wordList = Arrays.asList("cat","tac","kamal","kalam","heetro","jheerot");
         List<String> wordList2 = Arrays.asList("cat","tac");
-        wordList = findAllAnagrams(wordList);
+        wordList = findAllAnagramsByStreamAPI(wordList);
         System.out.println(wordList);
     }
+
+    private static List<String> findAllAnagramsByStreamAPI(List<String> words) {
+        final Map<String, List<String>> freq = words.stream().collect(Collectors.groupingBy(s -> {
+            char[] chars = s.toCharArray();
+            Arrays.sort(chars);
+            return new String(chars);
+        }));
+        final List<String> anagrams = new ArrayList<>();
+        freq.values().forEach( list -> {
+            if (list.size()>1) anagrams.addAll(list);
+        });
+        return anagrams;
+    }
+
 
     private static List<String> findAllAnagrams(List<String> words) {
         Map<String,List<String>> map = new HashMap<>();

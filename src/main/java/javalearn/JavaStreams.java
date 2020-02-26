@@ -7,13 +7,10 @@ import java.util.stream.Stream;
 
 public class JavaStreams {
     public static void main(String[] args) {
-
-        /*streams are functional view of data sources */
+        /* streams are functional view of data sources */
         /* views of collection , views of io channels*/
-
         // primitiveStream();
         objectStream();
-
     }
 
     private static void objectStream() {
@@ -34,7 +31,7 @@ public class JavaStreams {
         List<String> wordList = Arrays.asList("cat","tac","kamal","kalam","hejetro","jheerot");
         wordList.stream().forEach(System.out::println);
 
-        /*creation method 2 ;; Stream.of */
+        /* creation method 2 ;; Stream.of */
         Stream<String> stringStream = Stream.of("kamal", "kumar");
         stringStream.forEach(System.out::println);
     }

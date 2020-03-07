@@ -4,9 +4,11 @@ import java.util.Date;
 
 public class Fibonacci {
 
+    private static long[] memo = new long[100];
+
     public static void main(String[] args) {
         System.out.println(new Date().toString());
-        System.out.println(fib(70));
+        System.out.println(fibMemo(60));
         System.out.println(new Date().toString());
     }
 
@@ -25,4 +27,17 @@ public class Fibonacci {
         }
         return c;
     }
+
+
+    private static long fibMemo(int n) {
+        if (memo[n] != 0)
+            return memo[n];
+        if (n == 1 || n == 2)
+            memo[n]=1;
+        else
+            memo[n] = fibMemo(n-1) + fibMemo(n-2);
+
+        return memo[n];
+    }
+
 }

@@ -1,0 +1,11 @@
+modification not needed => String ======================> immutable
+modification needed =====> StringBuffer,StringBuilder ==> mutable
+
+StringBuffer => Thread Safe
+StringBuilder => not Thread Safe
+
+
+
+new() operator => it always create a new object in heap memory.
+String literal => syntax e.g. "Java",it may return an existing object from String pool
+

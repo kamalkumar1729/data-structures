@@ -1,20 +1,23 @@
 package javalearn;
 
 public class Strings {
-   /* String is immutable.
-      That is, its content cannot be modified once it is created.
-      For example, the method toUpperCase() constructs and returns
-      a new String instead of modifying the existing content.
+   /*   String is immutable.
+        That is, its content cannot be modified once it is created.
+        For example, the method toUpperCase() constructs and returns
+        a new String instead of modifying the existing content.
     */
 
 
    /*   why immutable ???
-        thread safe, caching, security, easy reuse without replication, etc.
+        thread safe,
+        caching(pooling),
+        security(other code),
+        easy reuse without replication, etc.
         can be used in hash DS , as they are immutable.
-     */
+    */
 
 
-   /*   Rule of Thumb: Strings are more efficient if they are not modified
+   /*   Rule of Thumb : Strings are more efficient if they are not modified
         (because they are shared in the string common pool).
         However, if you have to modify the content of a string frequently
         (such as a status message),

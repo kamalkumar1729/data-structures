@@ -10,7 +10,7 @@ public class RodCutting {
         System.out.println(maxProfitForLength(4));
     }
 
-    private static int maxProfitForLength(int len) {
+    private static int maxProfitForLength(final int len) {
         if (len == 1) return prices[1];
         int directProfit = prices[len];
         for (int i = 1; i < len; i++) {

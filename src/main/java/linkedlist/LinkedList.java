@@ -111,7 +111,8 @@ public class LinkedList {
     }
 
 
-    /* if elements are even print Right One*/
+    /* if elements are even print Right One */
+
     private static SingleNode middleOfLinkedList(SingleNode head) {
         SingleNode oneStep = head, twoStep = head;
         /* move one pointer 1 step another 2 steps */
@@ -126,7 +127,7 @@ public class LinkedList {
             if (head != null) {
                 SingleNode iter = head;
                 int len = getLengthOfLinkedList(head);
-                /*now find len-N+1 from the beginning */
+                /* now find len-N+1 from the beginning */
                 int fromStart = len-N+1;
                 for (int i = 1; i < fromStart; i++) iter = iter.Next();
                 return iter;
@@ -146,12 +147,13 @@ public class LinkedList {
                 prev = iter;
                 iter = temp;
             }
-            return null;
-        } else return null;
+        }
+        return null;
     }
 
 
     private static SingleNode reverseRecursive(SingleNode head) {
+        /*one or zero elements */
         if (head == null || head.Next() == null) return head;
         else {
             SingleNode node = reverseRecursive(head.Next());
@@ -193,8 +195,7 @@ public class LinkedList {
 
 
 
-    private static SingleNode getSinglyLinkedList() {
-
+    public static SingleNode getSinglyLinkedList() {
         SingleNode head = new SingleNode(21);
         SingleNode a = new SingleNode(22);
         SingleNode b = new SingleNode(23);
@@ -234,10 +235,8 @@ public class LinkedList {
         o.setNext(p);
         p.setNext(q);
         q.setNext(r);
-        r.setNext(i); // loop in Linked list
-        //r.setNext(s);
-
+        //r.setNext(i); // loop in Linked list
+        r.setNext(s);
         return head;
     }
-
 }

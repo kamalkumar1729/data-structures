@@ -1,11 +1,15 @@
 package dlinkedlist;
 
 public class dLinkedList {
+
     public static void main(String[] args) {
         DoubleNode head = getDoubleLinkedList();
         traverseDoubleLinkedList(head);
     }
 
+    private static DoubleNode deleteNode(Integer k, DoubleNode head) {
+        return new DoubleNode(1729);
+    }
 
     private static void traverseDoubleLinkedList(DoubleNode head) {
         if (head != null) {

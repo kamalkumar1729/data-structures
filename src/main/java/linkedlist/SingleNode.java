@@ -22,4 +22,7 @@ class SingleNode {
         return data;
     }
 
+    public void setData(Integer data) {
+        this.data = data;
+    }
 }

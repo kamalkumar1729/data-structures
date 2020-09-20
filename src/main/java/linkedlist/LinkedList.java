@@ -70,7 +70,7 @@ public class LinkedList {
             if (head != null) {
                 SingleNode iterator = head;
                 SingleNode prev = head;
-                /* we need a previous node to delete node */
+                /* we need to find the previous node to node to be deleted */
                 while (iterator != null) {
                     if (iterator.Data() == value)
                         break;
@@ -136,8 +136,9 @@ public class LinkedList {
     }
 
     // FIXME : No time for this shit;
-    //  Do it later;
-    //  Maybe Never;
+    //  Do it later; did;
+    //  Maybe Never; did;
+    //  DID IT !! On May14,2020
     private static SingleNode reverseLinkedList(SingleNode head) {
         if (head != null) {
             SingleNode iter = head,temp,prev=null;
@@ -147,8 +148,9 @@ public class LinkedList {
                 prev = iter;
                 iter = temp;
             }
+            return prev;
         }
-        return null;
+        return head;
     }
 
 

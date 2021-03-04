@@ -1,4 +1,4 @@
-package javalearn;
+package learnjava.misc;
 
 public interface IDataAccess {
     default void printDataSource() {

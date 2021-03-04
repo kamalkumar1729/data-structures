@@ -1,8 +1,6 @@
 package tree;
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 public class BinaryTree {
     // TODO :: Only 10 Questions. Please.
@@ -23,7 +21,18 @@ public class BinaryTree {
        // postOrderIterative(root);
 
 
-        levelOrderTraversal(root);
+       // levelOrderTraversal(root);
+
+        String a = "abc";
+        Map<String,Integer> map = new HashMap<>();
+        String b = new String("abc");
+        map.put(a,10);
+        map.put(b,20);
+        map.put(new String("abc"),30);
+        System.out.println(map.get("abc"));
+
+        long[] ll = {1,2,3};
+        // System.out.println(ll[0]+ll[1]+ll[2]+"lll");
     }
 
     private static void inOrderIterative(TreeNode root) {

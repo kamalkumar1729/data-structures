@@ -1,4 +1,4 @@
-package javalearn.logging;
+package learnjava.logging;
 
 import java.io.IOException;
 import java.util.logging.FileHandler;

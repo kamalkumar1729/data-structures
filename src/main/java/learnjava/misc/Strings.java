@@ -1,4 +1,4 @@
-package javalearn;
+package learnjava.misc;
 
 public class Strings {
    /*   String is immutable.

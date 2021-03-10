@@ -1,8 +1,19 @@
 package learnjava.primitives;
 
+
 public class HelloPrimitives {
+
+    static {
+        System.out.println("static");
+    }
+
+    public HelloPrimitives() {
+        System.out.println("constructor");
+    }
+
     public static void main(String[] args) {
 
+        new HelloPrimitives();
 
         byte bb = 127;
        // System.out.println(bb);

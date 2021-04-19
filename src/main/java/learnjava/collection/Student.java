@@ -2,7 +2,7 @@ package learnjava.collection;
 
 import java.util.Objects;
 
-public class Student  {
+public class Student {
 
     private String name;
     private Integer rollNo;
@@ -47,10 +47,6 @@ public class Student  {
                 '}' ;
     }
 
-    // @Override
-    public int compareTo(Student o) {
-        return this.rollNo.compareTo(o.getRollNo());
-    }
 
 
     @Override

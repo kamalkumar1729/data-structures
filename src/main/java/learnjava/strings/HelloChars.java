@@ -1,4 +1,3 @@
 package learnjava.strings;
 
-public class HelloChars {
-}
+public class HelloChars {}

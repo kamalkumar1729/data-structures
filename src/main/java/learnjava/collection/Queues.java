@@ -10,5 +10,6 @@ public class Queues {
         queue.add("Hello");
         queue.add("Cat");
 
+
     }
 }

@@ -1,9 +1,11 @@
 package learnjava.java8;
 
+import com.google.gson.Gson;
 import learnjava.collection.Student;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class StreamAPI  {
 
@@ -45,96 +47,16 @@ public class StreamAPI  {
         // System.out.println(stName);
 
 
-        List<GridData> grids = new ArrayList<>();
-        grids.add(new GridData(20.0,0.0,null,400L));
-        grids.add(new GridData(-10.0,3.0,4.0,100L));
-        grids.add(new GridData(-20.0,null,5.0,200L));
-        grids.add(new GridData(null,3.0,0.0,300L));
-        grids.add(new GridData(-10.0,-3.0,5.6,null));
+        /* curl :6002/jcp/CMCKPI/getKPIsByPolygonId?polygonId=2415102
+        curl :6002/jcp/CMCKPI/getKPIsByPolygonId?polygonId=2090102
+        */
 
+        Gson gson = new Gson();
+        System.out.println("**************");
 
-        List<GridData> gridData = new ArrayList<>();
-        gridData.add(new GridData(-88.0,-3.0,10.0,400L));
-        gridData.add(new GridData(-75.0,-5.0,23.0,40L));
-        gridData.add(new GridData(-20.0,3.0,34.0,4000L));
-        gridData.add(new GridData(null,4.0,null,40000L));
-        gridData.add(new GridData(-105.0,11.0,123.0,40L));
-        gridData.add(new GridData(-75.0,15.0,900.0,400L));
-        gridData.add(new GridData(-107.0,24.0,2342.0,null));
-        gridData.add(new GridData(-112.0,24.0,null,40000L));
-        gridData.add(new GridData(null,27.0,23.0,40L));
-        gridData.add(new GridData(-107.0,66.0,800.0,400L));
-        gridData.add(new GridData(-40.0,26.0,55.0,null));
-        gridData.add(new GridData(-7.0,31.0,77.0,4000L));
-        gridData.add(new GridData(null,32.0,567.0,400L));
-        gridData.add(new GridData(-80.0,33.0,700.0,4000L));
-        gridData.add(new GridData(-99.0,null,56789.0,null));
-        gridData.add(new GridData(-100.0,34.0,2032.0,4000L));
-        gridData.add(new GridData(-47.0,22.0,567.0,4L));
-        gridData.add(new GridData(-60.0,23.0,null,40L));
-        gridData.add(new GridData(-70.0,21.0,2342.0,4L));
-
-
-        double sumUsers = (double) gridData
-                .stream()
-                .map(GridData::getUsers)
-                .filter(Objects::nonNull)
-                .mapToLong(Long::longValue)
-                .sum();
-
-
-        double avgRSRP = gridData
-                .stream()
-                .map(GridData::getRsrp)
-                .filter(Objects::nonNull)
-                .mapToDouble(Double::doubleValue)
-                .average()
-                .orElse(0.00);
-
-
-        double avgSINR = gridData
-                .stream()
-                .map(GridData::getSinr)
-                .filter(Objects::nonNull)
-                .mapToDouble(Double::doubleValue)
-                .average()
-                .orElse(0.00);
-
-
-
-        double avgTraffic = gridData
-                .stream()
-                .map(GridData::getTraffic)
-                .filter(Objects::nonNull)
-                .mapToDouble(Double::doubleValue)
-                .average()
-                .orElse(0.00);
-
-
-
-        System.out.println("RSRP : " + avgRSRP);
-        System.out.println("SINR : "+ avgSINR);
-        System.out.println("USRS : "+ sumUsers);
-        System.out.println("TRFC : "+ avgTraffic);
-
-
-
-       /* Map<String, List<GridData>> usersGrouping = gridData
-                .stream()
-                .collect(Collectors.groupingBy(GridData::trafficGroups)), Collectors.counting())
-*/
-
-
-
-        // System.out.println("Sum of all all data : "+ reduce);
-
-        // System.out.println(usersGrouping);
-
-       // System.out.println(GridData.trafficGroups(new GridData(-7.0,1000.0,234.23,null)));
-
-
-        // String ss = "Kamalageis"+23;
-        //System.out.println(ss.length());
+        IntStream.range(1,10).forEach(x->System.out.print(x + " "));
+        System.out.println();
+        IntStream.rangeClosed(1,10).forEach(x->System.out.print(x + " "));
 
     }
 }

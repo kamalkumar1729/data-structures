@@ -11,9 +11,15 @@ public class ReadWriteLockTest {
         new Thread(new ReaderTask()).start();
         new Thread(new WriterTask()).start();
         new Thread(new ReaderTask()).start();
-        new Thread(new WriterTask()).start();
+        new Thread(new ReaderTask()).start();
         new Thread(new ReaderTask()).start();
         new Thread(new WriterTask()).start();
+        new Thread(new ReaderTask()).start();
+        new Thread(new ReaderTask()).start();
+        new Thread(new ReaderTask()).start();
+        new Thread(new WriterTask()).start();
+        new Thread(new ReaderTask()).start();
+        new Thread(new ReaderTask()).start();
         new Thread(new ReaderTask()).start();
 
     }
@@ -26,6 +32,9 @@ public class ReadWriteLockTest {
             readWriteLock.readLock().lock();
             try {
                 System.out.println("reading by " + Thread.currentThread().getName());
+                Thread.sleep(20000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             } finally {
                 readWriteLock.readLock().unlock();
             }

@@ -6,7 +6,7 @@ public class ReadWriteLockTest {
 
     static ReentrantReadWriteLock readWriteLock = new ReentrantReadWriteLock();
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
 
         new Thread(new ReaderTask()).start();
         new Thread(new WriterTask()).start();
@@ -23,7 +23,6 @@ public class ReadWriteLockTest {
         new Thread(new ReaderTask()).start();
 
     }
-
 
     static class ReaderTask implements Runnable {
         @Override

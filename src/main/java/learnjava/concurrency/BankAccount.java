@@ -77,4 +77,12 @@ public class BankAccount {
     }
 
 
+    @Override
+    public String toString() {
+        return "BankAccount{" +
+                "number='" + number + '\'' +
+                ", balance=" + balance +
+                ", owner='" + owner + '\'' +
+                '}';
+    }
 }
